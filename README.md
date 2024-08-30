@@ -42,3 +42,12 @@ Open the terminal:
 make
 ./push_swap 2 10 100 1000 1 3 5 6
 ```
+
+# Bonus Project
+
+```bash
+make bonus
+./push_swap_bonus 7 9 8 5 4
+```
+You have to write the moves that the sort makes, if they are right then at the end there will be OK otherwise KO if wrong, press ```Ctrl+D``` to stop the program.
+![images](./Docks/img/bonus.png)

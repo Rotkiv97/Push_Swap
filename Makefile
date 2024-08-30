@@ -73,7 +73,6 @@ SRCSBONUS := bonus/get_next_line/get_next_line.c \
                   ft_smistata_100_3.c \
                   ft_smistata_100_4.c \
                   ft_tab.c \
-                  ft_fmain.c \
                   bonus/ft_chaker_1.c \
                   bonus/ft_chaker_2.c \
                   bonus/ft_checker_3.c \
