@@ -1,64 +1,37 @@
-#  |  |  ___ \    \  |         |
-#  |  |     ) |  |\/ |   _  |  |  /   _ 
-# ___ __|  __/   |   |  (   |    <    __/ 
-#    _|  _____| _|  _| \__,_| _|\_\ \___|
-#                              by jcluzet
-################################################################################
-#                                     CONFIG                                   #
-################################################################################
+NAME := printf
+CC := gcc
+FLAGS := -Wall -Wextra -Werror 
 
-NAME        := printf
-CC        := gcc
-FLAGS    := -Wall -Wextra -Werror 
-################################################################################
-#                                 PROGRAM'S SRCS                               #
-################################################################################
-
-SRCS        :=      ft_lettura.c \
-                          ft_gest_ft.c \
-                          ft_gest_ft3.c \
-                          ft_ricercha_arg.c \
-                          ft_gest_ft2.c \
-                          ft_printf.c \
-                          ft_p.c \
+SRCS := ft_lettura.c \
+			ft_gest_ft.c \
+			ft_gest_ft3.c \
+			ft_ricercha_arg.c \
+			ft_gest_ft2.c \
+			ft_printf.c \
+			ft_p.c \
                           
-OBJS        := $(SRCS:.c=.o)
+OBJS:= $(SRCS:.c=.o)
 
 .c.o:
 	${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-################################################################################
-#                                  Makefile  objs                              #
-################################################################################
+${NAME}: ${OBJS}
+	${CC} ${FLAGS} -o ${NAME} ${OBJS}
 
+RM := rm -f
 
-CLR_RMV		:= \033[0m
-RED		    := \033[1;31m
-GREEN		:= \033[1;32m
-YELLOW		:= \033[1;33m
-BLUE		:= \033[1;34m
-CYAN 		:= \033[1;36m
-RM		    := rm -f
+all: ${NAME}
 
-${NAME}:	${OBJS}
-			@echo "$(GREEN)Compilation ${CLR_RMV}of ${YELLOW}$(NAME) ${CLR_RMV}..."
-			${CC} ${FLAGS} -o ${NAME} ${OBJS}
-			@echo "$(GREEN)$(NAME) created[0m ✔️"
-
-all:		${NAME}
-
-bonus:		all
+bonus: all
 
 clean:
-			@ ${RM} *.o */*.o */*/*.o
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)objs ✔️"
+	@ ${RM} *.o */*.o */*/*.o
 
-fclean:		clean
-			@ ${RM} ${NAME}
-			@ echo "$(RED)Deleting $(CYAN)$(NAME) $(CLR_RMV)binary ✔️"
+fclean:	clean
+	@ ${RM} ${NAME}
 
-re:			fclean all
+re:	fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:	all clean fclean re
 
 

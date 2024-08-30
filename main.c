@@ -17,7 +17,7 @@ void	ft_errore(t_swap **swap_a, t_swap **swap_b)
 		ft_free_swap(swap_a);
 	if (swap_b == NULL || *swap_b != NULL)
 		ft_free_swap(swap_b);
-	ft_printf("\033[31m c'è la puoi fare imbecille\n");
+	ft_printf("\033[31mError\033[0m\n");
 	exit(1);
 }
 
