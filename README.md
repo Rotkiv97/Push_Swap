@@ -50,4 +50,5 @@ make bonus
 ./push_swap_bonus 7 9 8 5 4
 ```
 You have to write the moves that the sort makes, if they are right then at the end there will be OK otherwise KO if wrong, press ```Ctrl+D``` to stop the program.
+
 ![images](./Docks/img/bonus.png)
